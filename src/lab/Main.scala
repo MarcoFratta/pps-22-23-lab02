@@ -1,6 +1,6 @@
 package lab
 
-import java.awt.Rectangle
+
 import scala.annotation.tailrec
 
 object Main extends App {
