@@ -58,6 +58,7 @@ object Main extends App {
 
   // TASK 5  svolto da solo
   println("-- TASK 5 --")
+
   def compose(f: Int => Int, g: Int => Int): Int => Int = x => f(g(x))
 
   println(compose(_ - 1, _ * 2)(5)) //9
@@ -90,20 +91,18 @@ object Main extends App {
     case Rectangle(width: Double, height: Double, bottomLeft: (Double, Double))
 
 
-
   object Shape:
     def perimeter(shape: Shape): Double = shape match
       case Square(l, _) => l * 4
       case Circle(r, _) => 2 * r * math.Pi
       case Rectangle(hx, hy, _) => 2 * hx + 2 * hy
 
-    private def inRange(x: Double, a:Double, b:Double): Boolean = x >= a && x <= b
+    private def inRange(x: Double, a: Double, b: Double): Boolean = x >= a && x <= b
 
     def contains(shape: Shape, p: (Double, Double)): Boolean = shape match
       case Square(l, lf) => inRange(p._1, lf._1, lf._1 + l) && inRange(p._2, lf._2, lf._2 + l)
       case Circle(r, c) => abs(p._1 - c._1) + abs(p._2 - c._2) <= r
       case Rectangle(hx, hy, lf) => inRange(p._1, lf._1, lf._1 + hx) && inRange(p._2, lf._2, lf._2 + hy)
-
 
 
   import Shape.*
@@ -161,6 +160,7 @@ object Main extends App {
       case _ => default
 
   import Option.*
+
   println("Filter:")
   println(f"filter(Some(5)(_ > 2)) = ${filter(Some(5))(_ > 2)}") // Some(5)
   println(f"filter(Some(5))(_ k> 8)) = ${filter(Some(5))(_ > 8)}") // None
