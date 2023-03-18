@@ -1,5 +1,4 @@
-package u02
-
+package lab
 
 import java.awt.Rectangle
 import scala.annotation.tailrec
@@ -164,7 +163,7 @@ object Main extends App {
   import Option.*
   println("Filter:")
   println(f"filter(Some(5)(_ > 2)) = ${filter(Some(5))(_ > 2)}") // Some(5)
-  println(f"filter(Some(5))(_ > 8)) = ${filter(Some(5))(_ > 8)}") // None
+  println(f"filter(Some(5))(_ k> 8)) = ${filter(Some(5))(_ > 8)}") // None
   println(f"filter(None[Int]())(_ > 2) = ${filter(None[Int]())(_ > 2)}") // None
   println("Map:")
   println(f"map(Some(5))(_ > 2) = ${map(Some(5))(_ > 2)}") // Some(true)
