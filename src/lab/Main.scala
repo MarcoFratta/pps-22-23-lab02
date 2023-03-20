@@ -99,9 +99,13 @@ object Main extends App {
 
     private def inRange(x: Double, a: Double, b: Double): Boolean = x >= a && x <= b
 
+    private def pow2(x: Double): Double = x * x
+
+
+
     def contains(shape: Shape, p: (Double, Double)): Boolean = shape match
       case Square(l, lf) => inRange(p._1, lf._1, lf._1 + l) && inRange(p._2, lf._2, lf._2 + l)
-      case Circle(r, c) => abs(p._1 - c._1) + abs(p._2 - c._2) <= r
+      case Circle(r, c) => sqrt(pow2(p._1 - c._1) + pow2(p._2 - c._2)) <= r
       case Rectangle(hx, hy, lf) => inRange(p._1, lf._1, lf._1 + hx) && inRange(p._2, lf._2, lf._2 + hy)
 
 
